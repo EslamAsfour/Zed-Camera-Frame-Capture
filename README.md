@@ -15,5 +15,6 @@ Python Script to capture eash frame from .SVO Video
     1. --Save-Left or -s-l : Flag to Save LeftSide Image
     2. --Save-Right or -s-r : Flag to Save RightSide Image
     3. --output or -o : Optional output Directory Path "Default Value /Output"
+    4. --seed or -s : Seed to be added to the output img 
 
 
