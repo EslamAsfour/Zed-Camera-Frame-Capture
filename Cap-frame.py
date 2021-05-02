@@ -5,7 +5,7 @@ import cv2
 import pyzed.sl as sl
 
 def Capture():
-    Source , Save_L, Save_R, Out, seed , drop = opt.path , opt.Save_Left , opt.Save_Right , opt.output , opt.seed , opt.dropFrame
+    Source , Save_L, Save_R, Out, seed , drop = opt.path , opt.Save_Left , opt.Save_Right , opt.output , opt.seed , opt.dropFrame+1
     
     L_Path = "LeftSide-Frames"
     R_Path = "RightSide-Frames"
@@ -53,6 +53,7 @@ def Capture():
                 if Save_R:
                     img = svo_Right.get_data()
                     cv2.imwrite( "{}/{}_R_{}.jpg".format(R_Path,seed,count) , img)
+            
         
         elif zed.grab() == sl.ERROR_CODE.END_OF_SVOFILE_REACHED:
             sys.exit("Mission Done (Y) Total Number of Frames = {}".format(count))  
@@ -76,7 +77,7 @@ if __name__ == '__main__':
     parser.add_argument('--Save-Left', '-s-l', action='store_true', help='Save LeftSide Image')
     parser.add_argument('--Save-Right', '-s-r', action='store_true', help='Save RightSide Image')
     parser.add_argument('--output', '-o',type=str, default='Output', help='Output Direcotry')  
-    parser.add_argument("-d", "--dropFrame", type=int, default= 1, help="Number of Frames to be dropped")
+    parser.add_argument("-d", "--dropFrame", type=int, default= 0, help="Number of Frames to be dropped")
     opt = parser.parse_args()
     
     Capture()
