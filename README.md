@@ -7,13 +7,14 @@ Python Script to capture eash frame from .SVO Video
  
 ### Sample Cmd Command : 
 ```python
- $ python Cap-frame.py --path "Path/to-SVO-File/" --Save-Left  --Save-Right --output Vid_1/
- $ python Cap-frame.py --path "E:/Test/Repo/Vid.svo"  -s-l -s-r -o "Vid_1/"
+ $ python Cap-frame.py --path "Path/to-SVO-File/" --Save-Left  --Save-Right --output Vid/ -s Vid_1
+ $ python Cap-frame.py --path "E:/Test/Repo/Vid.svo"  -s-l -s-r -s Gate_Vid
 
 ```
 ### Possible Arguments :
     1. --Save-Left or -s-l : Flag to Save LeftSide Image
     2. --Save-Right or -s-r : Flag to Save RightSide Image
     3. --output or -o : Optional output Directory Path "Default Value /Output"
+    4. --seed or -s : Seed to be added to the output img 
 
 
